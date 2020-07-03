@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="vend_bannerslider_widget" class="Vend\BanerSlider\Block\Widget"
+            placeholder_image="Magento_Cms::images/widget_block.png">
+        <label translate="true">Banner Slider</label>
+        <description translate="true">Banner Slider</description>
+        <parameters>
+            <parameter name="slider_id" xsi:type="select" visible="true" required="true" sort_order="10" source_model="Vend\BanerSlider\Model\Config\Source\SlidersWidget">
+                <label translate="true">Select Slider</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

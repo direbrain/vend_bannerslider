@@ -1,0 +1,33 @@
+@media only screen and (max-width: 425px) {
+    .owl-carousel .owl-item .item button.action.primary{
+        position: absolute;
+        bottom: 50%;
+        right: 35%;
+    }
+}
+@media only screen and (min-width: 426px) and (max-width: 1023px) {
+    .owl-carousel .owl-item .item button.action.primary{
+        position: absolute;
+        bottom: 50%;
+        right: 40%;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .owl-carousel .owl-item .item button.action.primary{
+        position: absolute;
+        bottom: 10%;
+        right: 10%;
+    }
+}
+.owl-carousel .owl-nav button.owl-next {
+    font-size: 30px;
+    position: absolute;
+    right: 1%;
+    bottom: 50%;
+}
+.owl-carousel .owl-nav button.owl-prev {
+    font-size: 30px;
+    position: absolute;
+    left: 1%;
+    bottom: 50%;
+}

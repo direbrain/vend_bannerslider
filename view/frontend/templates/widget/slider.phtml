@@ -1,0 +1,21 @@
+<?php
+/** @var $block Vend\BanerSlider\Block\Widget */
+$banners = $block->getSliderBanners();
+?>
+
+<div id="demo">
+<div id="owlslider" class="owl-carousel owl-theme">
+    <?php foreach($banners as $banner):?>
+        <div class="item"><img src="<?php echo $block->getHelper()->getMediaUrl().''.$banner->getBannerImage();?>" title="<?php echo $banner->getTitle(); ?>" alt="<?php echo $banner->getTitle(); ?>">
+        <button type="button" onclick="location.href='<?php echo $banner->getUrlKey(); ?>'" role="presentation" class="action primary"><span><?php echo $banner->getButtonContent(); ?></span></button>
+        </div>
+    <?php endforeach?>
+</div>
+</div>
+<script type="text/x-magento-init">
+    {
+        "#owlslider" : {
+             "bannerslider": {}
+        }
+    }
+</script>

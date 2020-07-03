@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="bannerslider_slider" resource="default" engine="innodb" comment="Slider Table">
+        <column xsi:type="smallint" name="slider_id" padding="6" unsigned="true" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Slider Title"/>
+        <column xsi:type="varchar" name="banner_group_ids" nullable="false" length="255" comment="Selected Banners"/>
+        <column xsi:type="timestamp" name="creation_time" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Slider Creation Time"/>
+        <column xsi:type="timestamp" name="update_time" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Slider Modification Time"/>
+        <column xsi:type="smallint" name="is_active" padding="6" unsigned="true" nullable="false" identity="false"
+                default="1" comment="Is Slider Active"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="slider_id"/>
+        </constraint>
+        <index referenceId="BANNERSLIDER_SLIDER_TITLE_BANNER_GROUP_IDS" indexType="fulltext">
+            <column name="title"/>
+            <column name="banner_group_ids"/>
+        </index>
+    </table>
+    <table name="bannerslider_banner" resource="default" engine="innodb" comment="Banner Table">
+        <column xsi:type="smallint" name="banner_id" padding="6" unsigned="true" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Slider Title"/>
+        <column xsi:type="varchar" name="button_content" comment="Button Content"/>
+        <column xsi:type="varchar" name="banner_image" length="255" comment="Banner Image"/>
+        <column xsi:type="varchar" name="url_key" length="255" comment="Banner Url Key"/>
+        <column xsi:type="timestamp" name="creation_time" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Banner Creation Time"/>
+        <column xsi:type="timestamp" name="update_time" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Banner Modification Time"/>
+        <column xsi:type="smallint" name="is_active" padding="6" unsigned="true" nullable="false" identity="false"
+                default="1" comment="Is Banner Active"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="banner_id"/>
+        </constraint>
+        <index referenceId="BANNERSLIDER_BANNER_TITLE_BUTTON_CONTENT_BANNER_IMAGE_URL_KEY" indexType="fulltext">
+            <column name="title"/>
+            <column name="button_content"/>
+            <column name="banner_image"/>
+            <column name="url_key"/>
+        </index>
+    </table>
+</schema>

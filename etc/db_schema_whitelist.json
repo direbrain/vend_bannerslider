@@ -1,0 +1,36 @@
+{
+    "bannerslider_slider": {
+        "column": {
+            "slider_id": true,
+            "title": true,
+            "banner_group_ids": true,
+            "creation_time": true,
+            "update_time": true,
+            "is_active": true
+        },
+        "index": {
+            "BANNERSLIDER_SLIDER_TITLE_BANNER_GROUP_IDS": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "bannerslider_banner": {
+        "column": {
+            "banner_id": true,
+            "title": true,
+            "button_content": true,
+            "banner_image": true,
+            "url_key": true,
+            "creation_time": true,
+            "update_time": true,
+            "is_active": true
+        },
+        "index": {
+            "BANNERSLIDER_BANNER_TITLE_BUTTON_CONTENT_BANNER_IMAGE_URL_KEY": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
